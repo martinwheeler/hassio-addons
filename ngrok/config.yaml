@@ -29,7 +29,6 @@ options:
       addr: 8123
       inspect: false
 schema:
-  version: 2
   log_level: list(crit|warn|error|info|debug)
   auth_token: str?
   region: list(au|eu|ap|us|sa|jp|in)?
