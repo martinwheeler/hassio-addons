@@ -6,7 +6,7 @@ description: >-
 init: false
 webui: http://[HOST]:[PORT:4040]
 url: https://github.com/martinwheeler/hassio-addons/ngrok
-stage: experimental
+stage: stable
 arch:
   - aarch64
   - amd64
