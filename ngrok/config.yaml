@@ -6,7 +6,7 @@ description: >-
 init: false
 webui: http://[HOST]:[PORT:4040]
 url: https://github.com/martinwheeler/hassio-addons/ngrok
-stage: deprecated
+stage: experimental
 arch:
   - aarch64
   - amd64
@@ -22,23 +22,22 @@ ports_description:
 options:
   log_level: info
   auth_token: ""
-  region: us
+  region: au
   tunnels:
-    - name: hass
+    - name: homeassistant
       proto: http
       addr: 8123
       inspect: false
-      auth: ""
 schema:
+  version: 2
   log_level: list(crit|warn|error|info|debug)
   auth_token: str?
-  region: list(us|eu|ap|au|sa|jp|in)?
+  region: list(au|eu|ap|us|sa|jp|in)?
   tunnels:
     - name: str
       proto: list(http|tls|tcp)
       addr: match(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5]))|([1-9]|[1-5]?[0-9]{2,4}|6[1-4][0-9]{3}|65[1-4][0-9]{2}|655[1-2][0-9]|6553[1-5])$)
       inspect: bool?
-      auth: password
       host_header: str?
       bind_tls: bool?
       subdomain: str?
